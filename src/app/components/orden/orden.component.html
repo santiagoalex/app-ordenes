@@ -1,0 +1,48 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">Crear orden</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <form [formGroup]="ordenForm">
+        <div class="form-group">
+            <label>ID Asesor:</label>
+            <input class="form-control" formControlName="idAsesor">
+            <label>ID Cliente:</label>
+            <input class="form-control" formControlName="idCliente">
+            <label>ID Acudiente:</label>
+            <input class="form-control" formControlName="idAcudiente">
+            <label>Producto:</label>
+            <input class="form-control" formControlName="producto">
+            <label>Especie:</label>
+            <input class="form-control" formControlName="especie">
+            <label>Cantidad:</label>
+            <input class="form-control" formControlName="cantidad">
+            <label>Valor Unidad:</label>
+            <input class="form-control" formControlName="valorUnidad">
+            <label>Valor Total:</label>
+            <input class="form-control" formControlName="valorTotal">
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="crearOrden(templateMensaje)">Guardar</button>
+    <button type="button" class="btn btn-secondary" (click)="bsModalRef.hide()">Cerrar</button>
+</div>
+
+
+<ng-template #templateMensaje>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">{{ resultado.titulo }}</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef2.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      {{ resultado.mensaje }}
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="modalRef2.hide()">Cerrar</button>
+    </div>
+  </ng-template>
